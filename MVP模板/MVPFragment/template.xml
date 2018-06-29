@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="1"
+    name="MVPFragment 模板"
+    minApi="9"
+    minBuildApi="15"
+    description="一键创建 MVP 单个页面所需要的全部组件,使用详情请见 README">
+
+    <category value="Fragment" />
+
+    <dependency name="android-support-v4" revision="8" />
+
+    <parameter
+        id="pageName"
+        name="Page Name"
+        type="string"
+        constraints="unique|nonempty"
+        default="Main"
+        help="请填写页面名,如填写 Main,会自动生成 Main, MainPresenter 等文件" />
+
+    <parameter
+            id="packageName"
+            name="Project Package Name"
+            type="string"
+            constraints="package"
+            default="com.mycompany.myapp"
+            help="请填写你的项目包名,请认真核实此包名是否是正确的项目包名,不能包含子包,正确的格式如:com.jessyan.arms"
+            />
+			
+	<parameter
+            id="basePackage"
+            name="Project base package"
+            type="string"
+            constraints="package"
+            suggest="${packageName}.mvp.base"
+            help="请填写你在项目中实现MVP的基类的包名"
+            />
+        
+
+    <parameter
+        id="needActivity"
+        name="Generate Fragment"
+        type="boolean"
+        default="true"
+        help="是否需要生成 Fragment ? 不勾选则不生成" />
+
+
+
+
+
+ <parameter
+        id="ativityPackageName"
+        name="Fragment Package Name"
+        type="string"
+        constraints="package"
+        suggest="${packageName}.mvp.ui.fragment"
+        visibility="needActivity"
+        help="Fragment 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
+        />
+
+
+
+
+
+<parameter
+        id="needContract"
+        name="Generate Contract"
+        type="boolean"
+        default="true"
+        help="是否需要生成 Contract ? 不勾选则不生成" />  
+
+ <parameter
+        id="contractPackageName"
+        name="Contract Package Name"
+        type="string"
+        constraints="package"
+        suggest="${packageName}.mvp.contract" 
+        visibility="needContract"
+        help="Contract 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
+        />  
+
+<parameter
+        id="needPresenter"
+        name="Generate Presenter"
+        type="boolean"
+        default="true"
+        help="是否需要生成 Presenter ? 不勾选则不生成" />  
+
+ <parameter
+        id="presenterPackageName"
+        name="Presenter Package Name"
+        type="string"
+        constraints="package"
+        suggest="${packageName}.mvp.presenter"
+        visibility="needPresenter"
+        help="Presenter 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
+        />  
+
+<parameter
+        id="needModel"
+        name="Generate Model"
+        type="boolean"
+        default="true"
+        help="是否需要生成 Model ? 不勾选则不生成" /> 
+
+
+<parameter
+        id="modelPackageName"
+        name="Model Package Name"
+        type="string"
+        constraints="package"
+        suggest="${packageName}.mvp.model"
+        visibility="needModel"
+        help="Model 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
+        />  
+
+
+
+
+
+    <!-- 128x128 thumbnails relative to template.xml -->
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>template_blank_activity.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
