@@ -27,12 +27,19 @@ https://www.jianshu.com/p/48e66e879061
 	
 	
 3.模板中默认的相关基类的名字
+
 	model 顶层接口 IModel
+	
 	view 顶层接口  IView
+	
 	presenter 接口 IPresenter
+	
 	BaseModel implements IModel
+	
 	Presenter基类：BasePresenter <V extends IView,M extends IModel> implements IPresenter
+	
 	Activity基类：MVPActivity<P extends IPresenter> extends FragmentActivity implements IView
+	
 	fragment基类：MVPFragment<P extends IPresenter> extends Fragment implements IView
   
   
