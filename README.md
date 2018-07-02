@@ -59,3 +59,6 @@ https://www.jianshu.com/p/48e66e879061
 要是想要修改生成的布局只需要将
 MVPActivity\root\res\layout\simple.xml.ftl 里面的布局改成自己的即可
 
+
+在项目的MVP模板文件夹下有截图
+
